@@ -1,16 +1,13 @@
-# React + Vite
+# Marywood Campus Navigator 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The purpose of this project is to create a campus resource for students, faculty and more. It will include links to important information like resources, contact information, an interactive map and a guided assistant. 
 
-Currently, two official plugins are available:
+## How to download 
+1. Download the files from github
+   
+## How to execute site
+1. Open Command Prompt
+2. Enter cd marywood-navigator 
+3. Enter npm run dev to open local host
+4. Link to local host 5173 should be ready to open 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
