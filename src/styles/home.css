@@ -1,0 +1,25 @@
+.home-container {
+  background: var(--surface);
+  color: var(--text);
+}
+
+.home-links button {
+  background: var(--accent);
+  color: var(--bg);
+  border: 2px solid var(--accent-border);
+}
+
+.home-links button:hover {
+  background: var(--accent-bg);
+  color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .home-images {
+    flex-direction: column;
+  }
+
+  .home-images img {
+    width: 100%;
+  }
+}

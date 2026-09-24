@@ -1,6 +1,13 @@
 import { useState } from "react";
 import { resources } from "./data/resources";
 import { contactInfo } from "./data/contactInfo";
+import "./styles/home.css";
+import "./styles/resources.css";
+import "./styles/contact.css";
+import "./styles/map.css";
+import "./styles/assistant.css";
+import CampusMap from "./components/Map";
+
 
 
 function App() {
@@ -8,10 +15,10 @@ function App() {
 
   return (
     <div style={{ padding: "20px" }}>
-      <h2>Marywood Campus Navigator</h2>
+      <h1>Marywood Campus Navigator</h1>
 
-      {/* Tabs */}
-      <div style={{ display: "flex", gap: "10px", marginBottom: "20px" }}>
+      {/* Tabs */} {/* try to fix the tab buttons to be more even */}
+            <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-evenly", marginBottom: "20px" }}>
         <button onClick={() => setActiveTab("Home")}>Home</button>
         <button onClick={() => setActiveTab("Resources")}>Resources</button>
         <button onClick={() => setActiveTab("Map")}>Map</button>
@@ -21,14 +28,14 @@ function App() {
        {/* HOME PAGE */}
       {activeTab === "Home" && (
         <div>
-          <h3>Welcome to Marywood University</h3>
+          <h2>Welcome to Marywood University</h2>
           <p>
             Navigate campus resources, find buildings, and access student support tools.
           </p>
 
           <div style={{ display: "flex", gap: "20px", marginTop: "20px" }}>
             <img src="/src/assets/marywood1.jpg" style={{ width: "45%" }} />
-            <img src="/src/assets/marywood2.jpg" style={{ width: "45%" }} />
+            <img src="/src/assets/marywood3.jpg" style={{ width: "45%" }} />
           </div>
 
           <div style={{ marginTop: "30px" }}>
@@ -44,25 +51,40 @@ function App() {
         </div>
       )}
 
-      {/* RESOURCES PAGE */}
-      {activeTab === "Resources" && (
-        <div>
-          <h3>Campus Resources</h3>
-          {resources.map(r => (
-            <div key={r.id} style={{ marginBottom: "10px" }}>
-              <strong>{r.name}</strong>: {r.description}
-            </div>
-          ))}
-        </div>
-      )}
-
+     
       {/* MAP PAGE */}
       {activeTab === "Map" && (
         <div>
           <h3>Interactive Campus Map</h3>
-          <p>Map feature coming soon.</p>
+          <CampusMap />
         </div>
       )}
+{/* RESOURCES PAGE */}
+{activeTab === "Resources" && (
+  <div>
+    <h3>Campus Resources</h3>
+
+    <div className="resources-container">
+      {resources.map(r => (
+        <div key={r.id} className="resource-card">
+          <img src={r.image} alt={r.name} className="resource-image" />
+
+          <h4>{r.name}</h4>
+          <p>{r.description}</p>
+
+          {r.category && <p><strong>Category:</strong> {r.category}</p>}
+          {r.building && <p><strong>Building:</strong> {r.building}</p>}
+          {r.hours && <p><strong>Hours:</strong> {r.hours}</p>}
+          {r.contactNumber && <p><strong>Phone:</strong> {r.contactNumber}</p>}
+          {r.contactEmail && <p><strong>Email:</strong> {r.contactEmail}</p>}
+        </div>
+      ))}
+    </div>
+  </div>
+)}
+
+
+
 
       {/* ASSISTANT PAGE */}
       {activeTab === "Assistant" && (

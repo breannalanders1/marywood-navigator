@@ -1,0 +1,10 @@
+@media (max-width: 768px) {
+  .nav-tabs {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .nav-tabs button {
+    width: 100%;
+  }
+}
