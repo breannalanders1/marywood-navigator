@@ -5,8 +5,6 @@ export const resources = [
     name: "Library & Learning Commons",
     description: "Library services, tutoring, writing support, study rooms, and research assistance.",
     location: "201 Morgan Road",
-    contactEmail: "n/a",
-    contactNumber: "n/a",
     category: "Academics",
     hours: "Sun-Sun 7 am-12 am",
     building: "Learning Commons",

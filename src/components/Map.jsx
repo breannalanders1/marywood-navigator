@@ -32,8 +32,15 @@ function CampusMap() {
               <strong>{b.name}</strong>
 
               {linkedResources.map((res) => (
-                <div key={res.id} style={{ marginTop: "8px" }}>
-                  <strong>{res.name}</strong>
+                <div key={res.id} style={{ marginTop: "10px" }}>
+                  <img 
+                  src={res.image} 
+                  alt={res.name} 
+                  className="popup-image"
+                  />
+                  {res.name !== b.name && (
+                  <p><strong>{res.name}</strong></p>
+                  )}
                   <p style={{ margin: 0 }}>{res.description}</p>
                 </div>
               ))}

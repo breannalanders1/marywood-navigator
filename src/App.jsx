@@ -33,10 +33,11 @@ function App() {
             Navigate campus resources, find buildings, and access student support tools.
           </p>
 
-          <div style={{ display: "flex", gap: "20px", marginTop: "20px" }}>
-            <img src="/src/assets/marywood1.jpg" style={{ width: "45%" }} />
-            <img src="/src/assets/marywood3.jpg" style={{ width: "45%" }} />
+          <div className="home-images">
+          <img src="/src/assets/marywood1.jpg" />
+          <img src="/src/assets/marywood3.jpg" />
           </div>
+
 
           <div style={{ marginTop: "30px" }}>
             <button onClick={() => setActiveTab("Resources")}>Explore Resources</button>
@@ -59,6 +60,7 @@ function App() {
           <CampusMap />
         </div>
       )}
+
 {/* RESOURCES PAGE */}
 {activeTab === "Resources" && (
   <div>
@@ -82,8 +84,6 @@ function App() {
     </div>
   </div>
 )}
-
-
 
 
       {/* ASSISTANT PAGE */}

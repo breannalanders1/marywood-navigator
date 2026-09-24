@@ -1,5 +1,61 @@
-@media (max-width: 768px) {
-  .resource-card {
-    width: 100%;
+/* Container */
+.resources-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  padding: 20px;
+}
+
+/* Card */
+.resource-card {
+  background: hsl(61, 92%, 56%);
+  border-radius: 10px;
+  padding: 18px;
+border: 2px solid #00563F20;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.18s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Hover effect */
+.resource-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+  border-color: #139e5b;
+}
+
+/* Image */
+.resource-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+/* Title */
+.resource-card h4 {
+  margin: 8px 0;
+  font-size: 1.1rem;
+  text-align: center;
+  color: #016045; /* Marywood green */
+}
+
+/* Description + details */
+.resource-card p {
+  margin: 4px 0;
+  font-size: 0.9rem;
+  text-align: center;
+  color: #333;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .resource-image {
+    height: 140px;
   }
 }
+
+

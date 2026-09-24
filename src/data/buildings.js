@@ -63,4 +63,4 @@ export const buildings = [
         resources: [8],
         category: "administration"
     }
-];
+];   add more buildings
