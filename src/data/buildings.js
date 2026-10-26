@@ -57,7 +57,7 @@ export const buildings = [
     },
     {
         id: 8,
-        name: "Shield Center for Visual Arts",
+        name: "Shields Center for Visual Arts",
         lat: 41.433005,
         lng: -75.633025,
         resources: [18],
@@ -100,7 +100,7 @@ export const buildings = [
         name: "IHM Center",
         lat: 41.431312,
         lng:-75.628348,
-        resources: [],
+        resources: [24],
         category: "administration"
     }
 ]; 

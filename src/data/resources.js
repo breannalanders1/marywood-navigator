@@ -52,7 +52,7 @@ export const resources = [
     name: "Nazareth Student Center",
     description: "Student center with dining, meeting spaces, and student services",
     category: "Student Center",
-    building: "Nazareth Hall",
+    building: "Nazareth Student Center",
     image: "/src/assets/marywood-nazareth-student-center.jpg"
   },
 
@@ -170,13 +170,13 @@ export const resources = [
     image: "/src/assets/marywood-campus-safety.JPG"
   },
   
-  //Shield Center for Visual Arts
+  //Shields Center for Visual Arts
   {
     id: 18,
-    name: "Shield Center for Visual Arts",
+    name: "Shields Center for Visual Arts",
     description: "Contains art galleries, studios and classrooms for art programs",
     category: "Arts",
-    building: "Shield Center for Visual Arts",
+    building: "Shields Center for Visual Arts",
     image: "/src/assets/marywood-shields-visual-arts-center.jpg"
   },
  
@@ -233,7 +233,7 @@ export const resources = [
     name: "IHM Center",
     description: "Vibrant hub of activity and community while housing IHM sisters, a chapel, offices and meeting spaces",
     category: "Support",
-    building: "IHM",
+    building: "IHM Center",
     image: "/src/assets/marywood-ihm-center.jpg"
   }
 

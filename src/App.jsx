@@ -62,28 +62,62 @@ function App() {
       )}
 
 {/* RESOURCES PAGE */}
+{/* RESOURCES PAGE */}
 {activeTab === "Resources" && (
-  <div>
-    <h3>Campus Resources</h3>
+  <div className="resources-page">
 
-    <div className="resources-container">
-      {resources.map(r => (
-        <div key={r.id} className="resource-card">
-          <img src={r.image} alt={r.name} className="resource-image" />
+    {/* Always reset selectedBuilding when entering the tab */}
+    {selectedBuilding === null && (
+      <div>
+        <h2>Campus Buildings</h2>
 
-          <h4>{r.name}</h4>
-          <p>{r.description}</p>
-
-          {r.category && <p><strong>Category:</strong> {r.category}</p>}
-          {r.building && <p><strong>Building:</strong> {r.building}</p>}
-          {r.hours && <p><strong>Hours:</strong> {r.hours}</p>}
-          {r.contactNumber && <p><strong>Phone:</strong> {r.contactNumber}</p>}
-          {r.contactEmail && <p><strong>Email:</strong> {r.contactEmail}</p>}
+        <div className="resources-container">
+          {buildings.map(b => (
+            <div 
+              key={b.id}
+              className="resource-card"
+              onClick={() => setSelectedBuilding(b)}
+            >
+              <h3>{b.name}</h3>
+              <p>{b.category}</p>
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
+      </div>
+    )}
+
+    {/* Only show resources if the building actually has matches */}
+    {selectedBuilding !== null && (
+      <div>
+        <h2>{selectedBuilding.name}</h2>
+
+        <div className="resources-container">
+          {resources
+            .filter(r => r.building.trim() === selectedBuilding.name.trim())
+            .map(r => (
+              <div key={r.id} className="resource-card">
+                <img src={r.image} alt={r.name} className="resource-image" />
+                <h3>{r.name}</h3>
+
+                {r.description && <p>{r.description}</p>}
+                {r.hours && <p><strong>Hours:</strong> {r.hours}</p>}
+                {r.location && <p><strong>Location:</strong> {r.location}</p>}
+                {r.contactEmail && <p><strong>Email:</strong> {r.contactEmail}</p>}
+                {r.contactNumber && <p><strong>Phone:</strong> {r.contactNumber}</p>}
+              </div>
+            ))}
+        </div>
+
+        <button onClick={() => setSelectedBuilding(null)}>
+          Back to Buildings
+        </button>
+      </div>
+    )}
+
   </div>
 )}
+
+
 
 
       {/* ASSISTANT PAGE */}
