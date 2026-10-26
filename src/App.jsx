@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { resources } from "./data/resources";
 import { contactInfo } from "./data/contactInfo";
+import { buildings } from "./data/buildings";
 import "./styles/home.css";
 import "./styles/resources.css";
 import "./styles/contact.css";
@@ -12,6 +13,11 @@ import CampusMap from "./components/Map";
 
 function App() {
   const [activeTab, setActiveTab] = useState("Home");
+  const [selectedBuilding, setSelectedBuilding] = useState(null);
+  const getBuildingImage = (buildingName) => {
+  const match = resources.find(r => r.building.trim() === buildingName.trim());
+  return match ? match.image : null;
+};
 
   return (
     <div style={{ padding: "20px" }}>
@@ -62,7 +68,6 @@ function App() {
       )}
 
 {/* RESOURCES PAGE */}
-{/* RESOURCES PAGE */}
 {activeTab === "Resources" && (
   <div className="resources-page">
 
@@ -78,8 +83,14 @@ function App() {
               className="resource-card"
               onClick={() => setSelectedBuilding(b)}
             >
-              <h3>{b.name}</h3>
-              <p>{b.category}</p>
+            {getBuildingImage(b.name) && (
+              <img 
+                src={getBuildingImage(b.name)} 
+                alt={b.name} 
+                className="resource-image" 
+              />
+            )}
+            <h3>{b.name}</h3>
             </div>
           ))}
         </div>
