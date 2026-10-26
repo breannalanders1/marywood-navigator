@@ -8,10 +8,10 @@
 
 /* Card */
 .resource-card {
-  background: hsl(61, 92%, 56%);
+  background: rgb(138, 139, 137);
   border-radius: 10px;
   padding: 18px;
-border: 2px solid #00563F20;
+  border: 2px solid #00563F20;
   box-shadow: 0 3px 8px rgba(0,0,0,0.12);
   transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.18s ease;
   display: flex;

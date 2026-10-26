@@ -5,6 +5,8 @@ import L from "leaflet";
 import { buildings } from "../data/buildings";
 import { resources } from "../data/resources";
 import { mapIcons } from "../data/mapIcons";
+import "../styles/map.css";
+import "../styles/popup.css";
 
 // Fix Leaflet icon issue in Vite
 delete L.Icon.Default.prototype._getIconUrl;
@@ -29,21 +31,25 @@ function CampusMap() {
         return (
           <Marker key={b.id} position={[b.lat, b.lng]}>
             <Popup>
+             <div className="popup-content">
               <strong>{b.name}</strong>
 
               {linkedResources.map((res) => (
-                <div key={res.id} style={{ marginTop: "10px" }}>
-                  <img 
-                  src={res.image} 
-                  alt={res.name} 
-                  className="popup-image"
-                  />
-                  {res.name !== b.name && (
-                  <p><strong>{res.name}</strong></p>
-                  )}
-                  <p style={{ margin: 0 }}>{res.description}</p>
-                </div>
-              ))}
+              <div key={res.id} className="popup-resource">
+              <img 
+               src={res.image} 
+               alt={res.name} 
+               className="popup-image"
+              />
+
+              {res.name !== b.name && (
+              <p><strong>{res.name}</strong></p>
+              )}
+
+              <p>{res.description}</p>
+              </div>
+               ))}
+            </div>
             </Popup>
           </Marker>
         );

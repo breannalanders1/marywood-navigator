@@ -2,5 +2,9 @@ export const categories = [
     "Academics",
     "Athletics",
     "Administration",
-    "Support"
+    "Support",
+    "Arts",
+    "Health",
+    "Student Center",
+    "Multimedia"
 ]
