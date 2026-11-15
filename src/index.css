@@ -1,17 +1,17 @@
-:root {  /* readjust the color palette || also change to light mode when working*/
-  /* TEXT */
+:root {  
+  
   --text: #1f1f1f;          
   --text-h: #0f3d0f;        
-  /* BACKGROUND */
-  --bg: #ffffff;            
-  --surface: #f3f7f3;       
-  --accent: #006b3f;        /* Marywood green (primary) */
-  --accent-bg: rgba(0, 107, 63, 0.1);   /* soft green background */
+ 
+  --bg: #ffffffdc;            
+  --surface: #ffffffdc;       
+  --accent: #006b3f;      
+  --accent-bg: rgba(0, 107, 63, 0.1);   
   --accent-border: rgba(0, 107, 63, 0.5);
-  /* SUPPORTING COLORS */
-  --secondary: #004f2d;     /* deeper forest green */
-  --highlight: #00a86b;     /* emerald accent */
-  /* UI ELEMENTS */
+  
+  --secondary: #004f2d;     
+  --highlight: #00a86b;    
+
   --border: #d9e2d9;
   --social-bg: rgba(0, 107, 63, 0.05);
   
@@ -121,7 +121,7 @@ code {
 .nav-tabs {
   display: flex;
   gap: 10px;
-  background-color: #f1f5f9;
+  background-color: #fffefedc;
   padding: 6px;
   border-radius: 12px;
   margin-bottom: 24px;
