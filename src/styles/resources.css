@@ -8,10 +8,10 @@
 
 /* Card */
 .resource-card {
-  background: rgb(5, 119, 60);
+  background: rgb(247, 255, 141);
   border-radius: 10px;
   padding: 18px;
-  border: 2px solid #00563F20;
+  border: 2px solid #001e1620;
   box-shadow: 0 3px 8px rgba(0,0,0,0.12);
   transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.18s ease;
   display: flex;
@@ -23,7 +23,7 @@
 .resource-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 4px 12px rgba(0,0,0,0.18);
-  border-color: #139e5b;
+  border-color: #007c02;
 }
 
 /* Image */
@@ -36,7 +36,7 @@
 }
 
 /* Title */
-.resource-card h4 {
+.resource-card h3 {
   margin: 8px 0;
   font-size: 1.1rem;
   text-align: center;
@@ -48,7 +48,7 @@
   margin: 4px 0;
   font-size: 0.9rem;
   text-align: center;
-  color: #f1f0f0;
+  color: #000000;
 }
 
 /* Mobile */

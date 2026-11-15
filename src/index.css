@@ -117,3 +117,46 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
+
+.nav-tabs {
+  display: flex;
+  gap: 10px;
+  background-color: #f1f5f9;
+  padding: 6px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.nav-btn {
+  flex: 1;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: transparent;
+  color: #5f6947;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nav-btn:hover {
+  background-color: #e2e8f0;
+  color: #0f172a;
+}
+
+.nav-btn.active {
+  background-color: #00563F; 
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 86, 63, 0.25);
+}
+
+@media (max-width: 480px) {
+  .nav-tabs {
+    flex-wrap: wrap;
+  }
+  .nav-btn {
+    flex: 1 1 45%;
+  }
+}

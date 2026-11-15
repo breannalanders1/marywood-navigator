@@ -2,41 +2,72 @@ import { useState } from "react";
 import { resources } from "./data/resources";
 import { contactInfo } from "./data/contactInfo";
 import { buildings } from "./data/buildings";
+import { categories } from "./data/categories";
 import "./styles/home.css";
 import "./styles/resources.css";
 import "./styles/contact.css";
 import "./styles/map.css";
 import "./styles/assistant.css";
 import CampusMap from "./components/Map";
+import Assistant from "./components/Assistant";
+
 
 
 
 function App() {
   const [activeTab, setActiveTab] = useState("Home");
   const [selectedBuilding, setSelectedBuilding] = useState(null);
+
   const getBuildingImage = (buildingName) => {
   const match = resources.find(r => r.building.trim() === buildingName.trim());
-  return match ? match.image : null;
-};
-
+  return match ? match.image : null; };
+  
   return (
     <div style={{ padding: "20px" }}>
       <h1>Marywood Campus Navigator</h1>
 
-      {/* Tabs */} {/* try to fix the tab buttons to be more even */}
-            <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-evenly", marginBottom: "20px" }}>
-        <button onClick={() => setActiveTab("Home")}>Home</button>
-        <button onClick={() => setActiveTab("Resources")}>Resources</button>
-        <button onClick={() => setActiveTab("Map")}>Map</button>
-        <button onClick={() => setActiveTab("Assistant")}>Assistant</button>
-      </div>
+      {/* Tabs */} 
+            {/* Navigation Tabs */}
+<div className="nav-tabs">
+  <button
+    className={`nav-btn ${activeTab === "Home" ? "active" : ""}`}
+    onClick={() => setActiveTab("Home")}
+  >
+    Home
+  </button>
 
-       {/* HOME PAGE */}
+  <button
+    className={`nav-btn ${activeTab === "Resources" ? "active" : ""}`}
+    onClick={() => {
+      setSelectedBuilding(null);
+      setActiveTab("Resources");
+    }}
+  >
+    Resources
+  </button>
+
+  <button
+    className={`nav-btn ${activeTab === "Map" ? "active" : ""}`}
+    onClick={() => setActiveTab("Map")}
+  >
+    Map
+  </button>
+
+  <button
+    className={`nav-btn ${activeTab === "Assistant" ? "active" : ""}`}
+    onClick={() => setActiveTab("Assistant")}
+  >
+    Assistant
+  </button>
+</div>
+
+       {/* home page */}
       {activeTab === "Home" && (
         <div>
           <h2>Welcome to Marywood University</h2>
           <p>
-            Navigate campus resources, find buildings, and access student support tools.
+            Skip the hassle of searching for buildings, offices, and resources on campus. 
+            Use our interactive map to instantly locate campus buildings, explore resources to see what the campus has to offer, or chat with our assistant to find what you need quickly and easily.
           </p>
 
           <div className="home-images">
@@ -45,36 +76,63 @@ function App() {
           </div>
 
 
-          <div style={{ marginTop: "30px" }}>
-            <button onClick={() => setActiveTab("Resources")}>Explore Resources</button>
-            <button onClick={() => setActiveTab("Map")} style={{ marginLeft: "10px" }}>
-              View Campus Map
-            </button>
-            <button onClick={() => setActiveTab("Assistant")} style={{ marginLeft: "10px" }}>
-              Guided Assistance
-            </button>
-            <button onClick={() => setActiveTab("Contact")}>Contact Us</button>
-          </div>
-        </div>
-      )}
+         <div className="features-grid">
+      <div 
+        className="feature-card" 
+        onClick={() => { setSelectedBuilding(null); setActiveTab("Resources"); }}
+      >
+        <h3>Resource Directory</h3>
+        <p>Browse academic, dining, athletic, and administrative offices with direct phone numbers and hours.</p>
+        <span className="feature-link">Explore Resources →</span>
+      </div>
+
+      <div className="feature-card" onClick={() => setActiveTab("Map")}>
+        <h3>Interactive Campus Map</h3>
+        <p>Locate major buildings, view campus photos, and see which offices live inside each hall.</p>
+        <span className="feature-link">View Campus Map →</span>
+      </div>
+
+      <div className="feature-card" onClick={() => setActiveTab("Assistant")}>
+        <h3>Guided Assistance</h3>
+        <p>Get help locating buildings and resources or find out where to handle transcripts and financial aid.</p>
+        <span className="feature-link">Open Assistant →</span>
+      </div>
+    </div>
+
+   
+    <div className="home-info">
+      <div className="info-pill">
+        <strong>Campus Safety (24/7):</strong> 570-348-6242
+      </div>
+      <div className="info-pill">
+        <strong>Main Number:</strong> {contactInfo.phone}
+      </div>
+      <button 
+        className="home-contact-btn" 
+        onClick={() => setActiveTab("Contact")}
+      >
+        Full Contact Info
+      </button>
+    </div>
+  </div>
+)}
 
      
-      {/* MAP PAGE */}
+      {/* map page */}
       {activeTab === "Map" && (
         <div>
-          <h3>Interactive Campus Map</h3>
+          <h1>Interactive Campus Map</h1>
           <CampusMap />
         </div>
       )}
 
-{/* RESOURCES PAGE */}
+{/* resources page */}
 {activeTab === "Resources" && (
   <div className="resources-page">
 
-    {/* Always reset selectedBuilding when entering the tab */}
     {selectedBuilding === null && (
       <div>
-        <h2>Campus Buildings</h2>
+        <h1>Campus Buildings</h1>
 
         <div className="resources-container">
           {buildings.map(b => (
@@ -97,7 +155,7 @@ function App() {
       </div>
     )}
 
-    {/* Only show resources if the building actually has matches */}
+    {/* show resources if the building actually has matches */}
     {selectedBuilding !== null && (
       <div>
         <h2>{selectedBuilding.name}</h2>
@@ -129,17 +187,19 @@ function App() {
 )}
 
 
-
-
-      {/* ASSISTANT PAGE */}
+      {/* assistant page */}
       {activeTab === "Assistant" && (
-        <div>
-          <h3>Guided Assistance</h3>
-          <p>Search tool coming soon.</p>
-        </div>
+        <Assistant 
+          buildings={buildings}
+          resources={resources}
+          categories={categories}
+          contactInfo={contactInfo}
+          setActiveTab={setActiveTab}
+          setSelectedBuilding={setSelectedBuilding}
+        />
       )}
 
-      {/* CONTACT PAGE */}
+      {/* contact page */}
       {activeTab === "Contact" && (
   <div>
     <h3>Contact Us</h3>

@@ -6,5 +6,6 @@ export const categories = [
     "Arts",
     "Health",
     "Student Center",
-    "Multimedia"
+    "Multimedia",
+    "Dining"
 ]
