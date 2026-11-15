@@ -130,7 +130,7 @@ export default function Assistant({ buildings, resources, categories, contactInf
             {msg.action && (
               <div>
                 <button onClick={msg.action} className="chat-action-btn">
-                  Take Me There
+                  Show me more!
                 </button>
               </div>
             )}
