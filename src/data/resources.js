@@ -96,7 +96,7 @@ export const resources = [
     id: 7,
     name: "Center for Athletics and Wellness",
     description: "Gym, fitness center, and athletic facilities",
-    keywords: ["gym", "fitness", "athletic facilities", "exercise", "wellness", "sports"],
+    keywords: ["gym", "fitness", "athletic facilities", "exercise", "wellness", "sports", "caw"],
     category: "Athletics",
     hours: "Varies",
     building: "Center for Athletics and Wellness",

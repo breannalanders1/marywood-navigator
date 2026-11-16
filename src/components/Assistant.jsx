@@ -104,7 +104,7 @@ export default function Assistant({ buildings, resources, categories, contactInf
 
   return (
     <div className="assistant-container">
-      <h2>Guided Assistance</h2>
+      <h2>Pacers Assistance</h2>
       
       <div className="chat-window">
         {messages.map((msg, index) => (
