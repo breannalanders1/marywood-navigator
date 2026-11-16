@@ -1,13 +1,44 @@
-# Marywood Campus Navigator 
+# Marywood Campus Navigator
 
-The purpose of this project is to create a campus resource for students, faculty and more. It will include links to important information like resources, contact information, an interactive map and a guided assistant. 
+A interactive web application that is designed to help Marywood University students navigate through campus buildings, explore administrative and academic resources, and interact with a built-in map and guided assistant.
 
-## How to download 
-1. Download the files from github
-   
-## How to execute site
-1. Open Command Prompt
-2. Enter cd marywood-navigator 
-3. Enter npm run dev to open local host
-4. Link to local host 5173 should be ready to open 
+---
 
+## Key Features
+
+* **Interactive Campus Map:** Built using React-Leaflet and OpenStreetMap, featuring custom markers and building popups with official campus photography.
+* **Comprehensive Resource Directory:** Features important academic, athletic, dining, and administrative offices categorized for quick discovery.
+* **Smart Guided Assistant:** A built-in chat interface that understands building nicknames (e.g., "LAC", "Naz", "Gym") and resource keywords (e.g., "transcripts", "FAFSA") with direct cross-tab navigation ("Show me more!").
+* **Responsive Design:** Optimized for both desktop displays and mobile device viewing.
+
+---
+
+## Built With
+
+* **Framework:** React (Vite)
+* **Mapping Library:** React-Leaflet / Leaflet.js
+* **Styling:** Custom CSS with modern CSS variables and flexbox/grid layouts
+* **Deployment:** Vercel
+
+---
+
+##  Project Structure
+
+```text
+marywood-campus-navigator/
+├── public/                  # Static assets & building imagery
+├── src/
+│   ├── assets/              # Campus photos & map icons
+│   ├── components/          # React components (Map, Assistant)
+│   ├── data/                # Structured datasets (buildings.js, categories.js, contactInfo.js, resources.js, mapIcons.js, resources.js)
+│   ├── styles/              # Modular stylesheets (assistant.css, contact.css, home.css, resources.css, etc.)
+│      ── App.css
+       ── App.jsx             # Main routing and global state controller
+       ── index.css              
+│      ── main.jsx             # React DOM entry point
+└── README.md
+├── eslint.config.js
+├── index.html
+├── package.json
+├── package-lock.json
+├── vite.config.js
