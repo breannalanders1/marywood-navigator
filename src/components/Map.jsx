@@ -4,7 +4,6 @@ import L from "leaflet";
 
 import { buildings } from "../data/buildings";
 import { resources } from "../data/resources";
-import { mapIcons } from "../data/mapIcons";
 import "../styles/map.css";
 import "../styles/popup.css";
 
