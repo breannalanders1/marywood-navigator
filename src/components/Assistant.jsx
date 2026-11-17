@@ -9,7 +9,7 @@ export default function Assistant({
   setActiveTab,
   setSelectedBuilding,
 }) {
-  // State to manage chat messages and user input
+  
   const [messages, setMessages] = useState([
     {
       sender: "bot",
@@ -79,7 +79,11 @@ export default function Assistant({
         };
       } else {
         // 2. Building Match
-        const matchedBuilding = buildings.find((b) => {
+        const exactSynonymMatch = buildings.find((b) =>
+          b.synonyms.some((syn) => syn.toLowerCase() === query),
+        );
+
+        const matchedBuilding = exactSynonymMatch || buildings.find((b) => {
           const matchesName = b.name.toLowerCase().includes(query);
           const matchesSynonym =
             b.synonyms && b.synonyms.some((syn) => query.includes(syn));

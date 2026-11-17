@@ -161,7 +161,7 @@ export const resources = [
     id: 13,
     name: "Liberal Arts Center",
     description: "One of Marywood's oldest buildings which provides classroom spaces for various programs and departments, including the Registrar's Office and Financial Aid Office.",
-    keywords: ["liberal arts", "classrooms", "academic programs"],
+    keywords: ["liberal arts", "classrooms", "academic programs", "lac"],
     category: "Academics",
     building: "Liberal Arts Center",
     image: "/src/assets/marywood-liberal-arts-center.jpg",
