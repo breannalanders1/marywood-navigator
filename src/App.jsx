@@ -117,6 +117,7 @@ function App() {
             <div className="info-pill">
               <strong>Campus Safety (24/7):</strong> 570-348-6242
             </div>
+            
             <div className="info-pill">
               <strong>Main Number:</strong> {contactInfo.phone}
             </div>
