@@ -76,6 +76,7 @@ export const resources = [
     name:"Bar None",
     description: "Newly opened spot for food and drinks ",
     keywords: ["bar", "food", "drinks", "hangout", "hangout spot"],
+    hours: "Restaurant Hours: M,TH,F-11:00 am - 11:30 pm  | T,W- Closed  | Weekends: 11:00am - 10:00 pm || Bar Hours: M,TH,F- 4:30 pm - 11:30 pm  | T,W- Closed  | Weekends: 11:00am - 10:00 pm ",
     category: "Dining",
     building: "Nazareth Student Center",
     image: "/src/assets/bar.jpg"
