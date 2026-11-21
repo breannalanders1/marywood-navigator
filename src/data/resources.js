@@ -74,7 +74,7 @@ export const resources = [
   {
     id:26,
     name:"Bar None",
-    description: "Newly opened spot for food and drinks ",
+    description: "Bar None is a great place to hangout with friends, watch sports, and enjoy a meal or drinks.",
     keywords: ["bar", "food", "drinks", "hangout", "hangout spot"],
     hours: "Restaurant Hours: M,TH,F-11:00 am - 11:30 pm  | T,W- Closed  | Weekends: 11:00am - 10:00 pm || Bar Hours: M,TH,F- 4:30 pm - 11:30 pm  | T,W- Closed  | Weekends: 11:00am - 10:00 pm ",
     category: "Dining",
