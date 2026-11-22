@@ -18,19 +18,18 @@ export default function Assistant({
     },
   ]);
   const [inputQuery, setInputQuery] = useState("");
-
-  // Function to handle user input and generate bot responses
+  
   const handleUserMessage = (text) => {
     if (!text || !text.trim()) return;
+
     const userMsg = { sender: "user", text };
     let botResponse = {
       sender: "bot",
-      text: "I'm not sure about that. Try asking about a building (like 'LAC' or 'Naz'), a category like 'Academics', or contact info.",
+      text: "I'm not sure about that. Try asking about a building, category or contact info.",
     };
 
     const query = text.toLowerCase().trim();
 
-    // 1.Menu
     if (
       query.includes("category") ||
       query.includes("categories") ||
@@ -41,9 +40,7 @@ export default function Assistant({
         text: "Select a category you'd like to explore:",
         options: categories,
       };
-    }
-    // 2. Contact Info
-    else if (
+    } else if (
       query.includes("contact") ||
       query.includes("phone") ||
       query.includes("email")
@@ -53,48 +50,55 @@ export default function Assistant({
         text: `You can reach Marywood University at ${contactInfo.phone} or email ${contactInfo.email}.`,
       };
     } else {
-      // 3. Official Category Match
       const matchedCategory = categories.find(
-        (cat) => cat.toLowerCase() === query,
+        (category) => category.toLowerCase().trim() == query,
       );
 
       if (matchedCategory) {
-        const matchingBuildings = buildings.filter((b) => {
-          const bRes = resources.filter(
-            (r) => r.building.trim() === b.name.trim(),
-          );
-          return bRes.some(
-            (r) =>
-              r.category.toLowerCase().trim() === matchedCategory.toLowerCase(),
-          );
-        });
+        const matchingBuildings = buildings.filter((building) =>
+          resources.some(
+            (resource) =>
+              resource.building.trim() == building.name.trim() &&
+              resource.category.toLowerCase().trim() == matchedCategory.toLowerCase().trim(),
+          ),
+        );
+        let responseText = `I couldn't find locations under ${matchedCategory}.`;
 
+        if (matchingBuildings.length > 0) {
+          responseText = `Here are places under ${matchedCategory}:`;
+        }
         botResponse = {
           sender: "bot",
-          text:
-            matchingBuildings.length > 0
-              ? `Here are locations under ${matchedCategory}:`
-              : `I couldn't find locations under ${matchedCategory}.`,
-          options: matchingBuildings.map((b) => b.name),
+          text: responseText,
+          options: matchingBuildings.map((building) => building.name),
         };
       } else {
-        // 2. Building Match
-        const exactSynonymMatch = buildings.find((b) =>
-          b.synonyms.some((syn) => syn.toLowerCase() === query),
+        const exactSynonymMatch = buildings.find((building) =>
+          building.synonyms.some(
+            (synonym) => synonym.toLowerCase() == query,
+          ),
         );
 
-        const matchedBuilding = exactSynonymMatch || buildings.find((b) => {
-          const matchesName = b.name.toLowerCase().includes(query);
-          const matchesSynonym =
-            b.synonyms && b.synonyms.some((syn) => query.includes(syn));
-          return matchesName || matchesSynonym;
-        });
+        const matchedBuilding =
+          exactSynonymMatch ||
+          buildings.find((building) => {
+            const matchesName = building.name.toLowerCase().includes(query);
+            const matchesSynonym =
+              building.synonyms &&
+              building.synonyms.some((synonym) =>
+                query.includes(synonym.toLowerCase()),
+              );
+            return matchesName || matchesSynonym;
+          });
 
         if (matchedBuilding) {
           const buildingResources = resources.filter(
-            (r) => r.building.trim() === matchedBuilding.name.trim(),
+            (resource) =>
+              resource.building.trim() == matchedBuilding.name.trim(),
           );
-          const resourceNames = buildingResources.map((r) => r.name).join(", ");
+          const resourceNames = buildingResources
+            .map((resource) => resource.name)
+            .join(", ");
 
           botResponse = {
             sender: "bot",
@@ -105,11 +109,13 @@ export default function Assistant({
             },
           };
         } else {
-          // 4. Resource Match
-          const matchedResource = resources.find((r) => {
-            const matchesName = r.name.toLowerCase().includes(query);
+          const matchedResource = resources.find((resource) => {
+            const matchesName = resource.name.toLowerCase().includes(query);
             const matchesKeyword =
-              r.keywords && r.keywords.some((k) => query.includes(k));
+              resource.keywords &&
+              resource.keywords.some((keyword) =>
+                query.includes(keyword.toLowerCase()),
+              );
             return matchesName || matchesKeyword;
           });
 
@@ -119,7 +125,8 @@ export default function Assistant({
               text: `${matchedResource.name}\n${matchedResource.description || ""}\n${matchedResource.hours ? `Hours: ${matchedResource.hours}` : ""}`,
               action: () => {
                 const parentBuilding = buildings.find(
-                  (b) => b.name.trim() === matchedResource.building.trim(),
+                  (building) =>
+                    building.name.trim() == matchedResource.building.trim(),
                 );
                 if (parentBuilding) setSelectedBuilding(parentBuilding);
                 setActiveTab("Resources");
@@ -136,30 +143,30 @@ export default function Assistant({
 
   return (
     <div className="assistant-container">
-      <h2>Pacers Assistance</h2>
+      <h2>Pacers Assistant</h2>
 
       <div className="chat-window">
-        {messages.map((msg, index) => (
-          <div key={index} className={`chat-message-row ${msg.sender}`}>
-            <div className={`chat-bubble ${msg.sender}`}>{msg.text}</div>
+        {messages.map((message, index) => (
+          <div key={index} className={`chat-row ${message.sender}`}>
+            <div className={`chat-bubble ${message.sender}`}>{message.text}</div>
 
-            {msg.options && (
+            {message.options && (
               <div className="chat-options">
-                {msg.options.map((opt, idx) => (
+                {message.options.map((option, index) => (
                   <button
-                    key={idx}
-                    onClick={() => handleUserMessage(opt)}
-                    className="chat-option-btn"
+                    key={index}
+                    onClick={() => handleUserMessage(option)}
+                    className="chat-option-button"
                   >
-                    {opt}
+                    {option}
                   </button>
                 ))}
               </div>
             )}
 
-            {msg.action && (
+            {message.action && (
               <div>
-                <button onClick={msg.action} className="chat-action-btn">
+                <button onClick={message.action} className="chat-action-button">
                   Show me more!
                 </button>
               </div>
@@ -174,12 +181,12 @@ export default function Assistant({
           value={inputQuery}
           placeholder="Ask me about a building, category, or contact info..."
           onChange={(e) => setInputQuery(e.target.value)}
-          onKeyDown={(e) => e.key === "Enter" && handleUserMessage(inputQuery)}
+          onKeyDown={(e) => e.key == "Enter" && handleUserMessage(inputQuery)}
           className="chat-input"
         />
         <button
           onClick={() => handleUserMessage(inputQuery)}
-          className="chat-send-btn"
+          className="chat-send-button"
         >
           Send
         </button>

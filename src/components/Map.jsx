@@ -26,16 +26,16 @@ function CampusMap() {
     >
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
-      {buildings.map((b) => {
+      {buildings.map((building) => {
         const linkedResources = resources.filter((r) =>
-          b.resources.includes(r.id),
+          building.resources.includes(r.id),
         );
 
         return (
-          <Marker key={b.id} position={[b.lat, b.lng]}>
+          <Marker key={building.id} position={[building.lat, building.lng]}>
             <Popup>
               <div className="popup-content">
-                <strong>{b.name}</strong>
+                <strong>{building.name}</strong>
 
                 {linkedResources.map((res) => (
                   <div key={res.id} className="popup-resource">
@@ -45,7 +45,7 @@ function CampusMap() {
                       className="popup-image"
                     />
 
-                    {res.name !== b.name && (
+                    {res.name !== building.name && (
                       <p>
                         <strong>{res.name}</strong>
                       </p>

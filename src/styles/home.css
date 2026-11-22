@@ -1,30 +1,14 @@
 .home-container {
-  background: var(--surface);
-  color: var(--text);
+  background: #ffffff;
+  color: #333333;
 }
 
 .home-links button {
-  background: var(--accent);
-  color: var(--bg);
-  border: 2px solid var(--accent-border);
+  background: #00563F;
+  color: #ffffff;
+  border: 2px solid #00563F;
 }
 
-.home-links button:hover {
-  background: var(--accent-bg);
-  color: var(--accent);
-}
-
-@media (max-width: 768px) {
-  .home-images {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .home-images img {
-    max-width: 100%;
-  }
-}
-/* Home Images Layout */
 .home-images {
   display: flex;
   gap: 20px;
@@ -33,7 +17,6 @@
   justify-content: center;
 }
 
-/* Home Images Styling */
 .home-images img {
   width: 100%;
   max-width: 48%;
@@ -45,13 +28,12 @@
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Hover effect */
 .home-images img:hover {
   transform: scale(1.02);
   box-shadow: 0 6px 16px rgba(0,0,0,0.22);
-  border-color: #00563F; /* green highlight */
+  border-color: #00563F; 
 }
-/* (New) */
+
 .features-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -60,8 +42,8 @@
 }
 
 .feature-card {
-  background: var(--surface, #ffffff);
-  border: 1px solid var(--accent-border, #e2e8f0);
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
   border-radius: 10px;
   padding: 20px;
   cursor: pointer;
@@ -95,22 +77,22 @@
   margin-top: 12px;
 }
 
-/* Quick Info Bar & Contact Button */
+
 .home-quick-info {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 20px;
-  background: var(--surface, #f8f9fa);
+  background: #f8f9fa;
   padding: 15px 20px;
   border-radius: 8px;
-  border: 1px solid var(--accent-border, #e1e4e8);
+  border: 1px solid #e1e4e8;
   margin-top: 25px;
   font-size: 14px;
 }
 
-.home-contact-btn {
+.home-contact-button {
   background: #00563F;
   color: #ffffff;
   border: none;
@@ -121,18 +103,16 @@
   transition: background 0.2s;
 }
 
-.home-contact-btn:hover {
+.home-contact-button:hover {
   background: #004331;
 }
+@media (max-width: 768px) {
+  .home-images {
+    flex-direction: column;
+    align-items: center;
+  }
 
-/* Legacy button support if used elsewhere */
-.home-links button {
-  background: var(--accent);
-  color: var(--bg);
-  border: 2px solid var(--accent-border);
-}
-
-.home-links button:hover {
-  background: var(--accent-bg);
-  color: var(--accent);
+  .home-images img {
+    max-width: 100%;
+  }
 }

@@ -62,7 +62,7 @@ function App() {
 
       {activeTab === "Home" && (
         <div>
-          <h2>Welcome to Marywood University</h2>
+          <h1>Welcome to Marywood University</h1>
           <p>
             Skip the hassle of searching for buildings, offices, and resources
             on campus. Use our interactive map to instantly locate campus
@@ -104,7 +104,7 @@ function App() {
               className="feature-card"
               onClick={() => setActiveTab("Assistant")}
             >
-              <h3>Guided Assistance</h3>
+              <h3>Assistant Tool</h3>
               <p>
                 Get help locating buildings and resources or find out where to
                 handle transcripts and financial aid.
@@ -122,7 +122,7 @@ function App() {
               <strong>Main Number:</strong> {contactInfo.phone}
             </div>
             <button
-              className="home-contact-btn"
+              className="home-contact-button"
               onClick={() => setActiveTab("Contact")}
             >
               Full Contact Info
@@ -158,21 +158,20 @@ function App() {
                         className="resource-image"
                       />
                     )}
-                    <h3>{b.name}</h3>
+                    <h1>{b.name}</h1>
                   </div>
                 ))}
               </div>
             </div>
           )}
 
-          {/* show resources if the building actually has matches */}
+          
           {selectedBuilding !== null && (
             <div>
-              <h2>{selectedBuilding.name}</h2>
+              <h1>{selectedBuilding.name}</h1>
 
               <div className="resources-container">
-                {resources
-                  .filter(
+                {resources.filter(
                     (r) => r.building.trim() === selectedBuilding.name.trim(),
                   )
                   .map((r) => (
@@ -182,7 +181,7 @@ function App() {
                         alt={r.name}
                         className="resource-image"
                       />
-                      <h3>{r.name}</h3>
+                      <h1>{r.name}</h1>
 
                       {r.description && <p>{r.description}</p>}
                       {r.hours && (
@@ -232,7 +231,7 @@ function App() {
       {/* contact page */}
       {activeTab === "Contact" && (
         <div>
-          <h3>Contact Us</h3>
+          <h2>Contact Us</h2>
           <p>
             <strong>Phone:</strong> {contactInfo.phone}
           </p>

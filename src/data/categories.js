@@ -4,7 +4,6 @@ export const categories = [
     "Administration",
     "Support",
     "Arts",
-    "Health",
     "Student Center",
     "Multimedia",
     "Dining"
