@@ -1,4 +1,31 @@
-
+import marywoodLibraryImg from "../assets/marywood-library.jpg";
+import marywoodLearningCommonsTopImg from "../assets/marywood-learning-commons-top.jpg";
+import podcastImg from "../assets/podcast.JPG";
+import radioStationImg from "../assets/radiostation.jpg";
+import tvImg from "../assets/tv.jpg";
+import nazarethStudentCenterImg from "../assets/marywood-nazareth-student-center.jpg";
+import mainDiningImg from "../assets/main.jpg";
+import barNoneImg from "../assets/bar.jpg";
+import latourImg from "../assets/latour.jpeg";
+import athleticsWellnessImg from "../assets/marywood-athletics-and-wellness-center.jpg";
+import exerciseScienceImg from "../assets/excercisescience.jpg";
+import fitnessCenterImg from "../assets/gym.jpg";
+import aquaticsCenterImg from "../assets/marywood-aquatics-center.jpg";
+import insalacoImg from "../assets/marywood-insalaco-studio-arts-center.jpg";
+import mcgowanImg from "../assets/marywood-mcgowan-center-graduate-professional-studies.jpg";
+import pscImg from "../assets/PSc.jpg";
+import liberalArtsImg from "../assets/marywood-liberal-arts-center.jpg";
+import registrarImg from "../assets/marywood-registrar-office.jpg";
+import financialAidImg from "../assets/marywood-financial-aid-office.jpg";
+import admissionsImg from "../assets/marywood-admissions-office.jpg";
+import campusSafetyImg from "../assets/marywood-campus-safety.JPG";
+import shieldsImg from "../assets/marywood-shields-visual-arts-center.jpg";
+import architecturalStudiesImg from "../assets/marywood-architectural-studies-center.jpg";
+import oneillImg from "../assets/marywood-oneill-healthy-families-center.jpg";
+import setteLaVerghettaImg from "../assets/marywood-sette-laverghetta-performing-arts-center.jpg";
+import theaterImg from "../assets/theater.jpg";
+import scienceCenterImg from "../assets/marywood-science-center.jpg";
+import ihmCenterImg from "../assets/marywood-ihm-center.jpg";
 export const resources = [
   //Learning Commons
   {
@@ -10,7 +37,7 @@ export const resources = [
     category: "Academics",
     hours: "Sun-Sun 7 am-12 am",
     building: "Learning Commons",
-    image: "/src/assets/marywood-library.jpg"
+    image: marywoodLibraryImg
 
   },
   {
@@ -21,7 +48,7 @@ export const resources = [
     category: "Academics",
     hours: "Mon-Fri 8:30 am-4:30 pm",
     building: "Learning Commons",
-    image: "/src/assets/marywood-learning-commons-top.jpg"
+    image: marywoodLearningCommonsTopImg
   },
   {
     id: 3,
@@ -30,7 +57,7 @@ export const resources = [
     keywords: ["podcast", "audio", "recording", "digital content"],
     category:"Multimedia",
     building: "Learning Commons",
-    image: "/src/assets/podcast.JPG"
+    image: podcastImg
   },
   {
     id: 4,
@@ -39,7 +66,7 @@ export const resources = [
     keywords: ["radio", "music", "streaming", "student run", "vmfm", "broadcasting"],
     category:"Multimedia",
     building: "Learning Commons",
-    image: "/src/assets/radiostation.jpg"
+    image: radioStationImg
   },
   {
     id: 5,
@@ -48,7 +75,7 @@ export const resources = [
     keywords: ["tv", "film", "production", "broadcasting", "student run"],
     category:"Multimedia",
     building: "Learning Commons",
-    image: "/src/assets/tv.jpg"
+    image: tvImg
   },
 
   //Naz
@@ -59,7 +86,7 @@ export const resources = [
     keywords: ["student center", "dining", "meeting spaces", "student services", "hangout", "main dining hall"],
     category: "Student Center",
     building: "Nazareth Student Center",
-    image: "/src/assets/marywood-nazareth-student-center.jpg"
+    image: nazarethStudentCenterImg
   },
   {
     id: 25,
@@ -70,7 +97,7 @@ export const resources = [
      contactNumber: "570-348-6241 x2442",
     category: "Dining",
     building: "Nazareth Student Center",
-    image: "/src/assets/main.jpg"
+    image: mainDiningImg
   },
   {
     id:26,
@@ -80,7 +107,7 @@ export const resources = [
     hours: "Restaurant Hours: M,TH,F-11:00 am - 11:30 pm  | T,W- Closed  | Weekends: 11:00am - 10:00 pm || Bar Hours: M,TH,F- 4:30 pm - 11:30 pm  | T,W- Closed  | Weekends: 11:00am - 10:00 pm ",
     category: "Dining",
     building: "Nazareth Student Center",
-    image: "/src/assets/bar.jpg"
+    image: barNoneImg
   },
   {  
     id: 27,
@@ -89,7 +116,7 @@ export const resources = [
     keywords: ["meeting room", "presentation space", "event venue"],
     category: "Academics",
     building: "Nazareth Student Center",
-    image: "/src/assets/latour.jpeg"
+    image: latourImg
   },
  
 
@@ -104,7 +131,7 @@ export const resources = [
     contactNumber: "570-348-6221 x 2290",
     hours: "M - F:  7:00am-9:00pm | Sat:  9:00am-3:00pm | Sun:  12:00pm-9:00pm",
     building: "Center for Athletics and Wellness",
-    image: "/src/assets/marywood-athletics-and-wellness-center.jpg"
+    image: athleticsWellnessImg
   },
   {
     id:8,
@@ -113,7 +140,7 @@ export const resources = [
     keywords: ["lab", "research", "physiology", "exercise science"],
     category: "Academics",
     building:"Center for Athletics and Wellness",
-    image: "/src/assets/excercisescience.jpg"
+    image: exerciseScienceImg
   },
   {
     id:9,
@@ -123,7 +150,7 @@ export const resources = [
     hours: "M - T:  9:00am-7:00pm ",
     category: "Athletics",
     building:"Center for Athletics and Wellness",
-    image: "/src/assets/gym.jpg"
+    image: fitnessCenterImg
   },
   {
     id:28,
@@ -134,7 +161,7 @@ export const resources = [
     contactNumber: "570-348-6221 x 2686",
     hours: " M - 8:30-10am & 1-3pm || T - 8:30-11am, 12-3:30pm & 5:30-6pm || W - 8:30-10am, 12-4:30pm & 7-9pm || Th - 8:30-3:30pm, & 5:30-6 pm || F - 8:30-10am, 12-4:30pm || Closed on Weekends",
     building:"Center for Athletics and Wellness",
-    image: "/src/assets/marywood-aquatics-center.jpg"
+    image: aquaticsCenterImg
   },
   //Insalaco
   {
@@ -145,7 +172,7 @@ export const resources = [
     keywords: ["art", "studio", "galleries", "creative space"],
     category: "Arts",
     building: "Insalaco Center for Studio Arts",
-    image: "src/assets/marywood-insalaco-studio-arts-center.jpg"
+    image: insalacoImg
   },
   
 //McGowan
@@ -157,7 +184,7 @@ export const resources = [
     keywords: ["mcgowan", "counseling", "classrooms", "clinical", "professional development"],
     category: "Academics",
     building:"McGowan Center for Graduate and Professional Studies",
-    image:"/src/assets/marywood-mcgowan-center-graduate-professional-studies.jpg"
+    image:mcgowanImg
   },
   {
      id: 12 ,
@@ -169,7 +196,7 @@ export const resources = [
     contactEmail: "wellbeing@marywood.edu",
     contactNumber: "570-348-6245",
     building: "McGowan Center for Graduate and Professional Studies",
-    image: "/src/assets/PSc.jpg"
+    image: pscImg
   },
 
   //LAC
@@ -181,7 +208,7 @@ export const resources = [
     keywords: ["liberal arts", "classrooms", "academic programs", "lac"],
     category: "Academics",
     building: "Liberal Arts Center",
-    image: "/src/assets/marywood-liberal-arts-center.jpg",
+    image: liberalArtsImg
   },
   {
     id:14,
@@ -193,7 +220,7 @@ export const resources = [
     contactEmail: "registrar@marywood.edu",
     contactNumber: "570-348-6280",
     building: "Liberal Arts Center",
-    image: "/src/assets/marywood-registrar-office.jpg"
+    image: registrarImg
   },
   {
     id: 15 ,
@@ -205,7 +232,7 @@ export const resources = [
     contactEmail: "finaid@marywood.edu",
     contactNumber: "570-348-6225",
     building: "Liberal Arts Center",
-    image: "/src/assets/marywood-financial-aid-office.jpg"
+    image: financialAidImg
   },
   {
     id: 16,
@@ -217,7 +244,7 @@ export const resources = [
     contactEmail:"YourFuture@marywood.edu",
     contactNumber: "570-348-6234",
     building: "Liberal Arts Center",
-    image: "/src/assets/marywood-admissions-office.jpg"
+    image: admissionsImg
   },
 
    //Campus Safety
@@ -230,7 +257,7 @@ export const resources = [
     hours: "24/7",
     building: "Campus Safety",
     contactNumber: "570-348-6242",
-    image: "/src/assets/marywood-campus-safety.JPG"
+    image: campusSafetyImg
   },
   
   //Shields Center for Visual Arts
@@ -242,7 +269,7 @@ export const resources = [
     keywords: ["visual arts", "art galleries", "studios", "classrooms"],
     category: "Arts",
     building: "Shields Center for Visual Arts",
-    image: "/src/assets/marywood-shields-visual-arts-center.jpg"
+    image: shieldsImg
   },
  
   //Center of Architectural Studies
@@ -254,7 +281,7 @@ export const resources = [
     keywords: ["architecture", "education", "research", "facilities"],
     category: "Academics",
     building: "Center of Architectural Studies",
-    image: "/src/assets/marywood-architectural-studies-center.jpg"
+    image: architecturalStudiesImg
   },
 
   // oneill Health Center
@@ -266,7 +293,7 @@ export const resources = [
     keywords: ["nursing", "health", "nutrition", "pa program", "classroom", "research", "academic programs", "healthcare"],
     category: "Academics",
     building: "O'Neill Center for Healthy Families",
-    image: "/src/assets/marywood-oneill-healthy-families-center.jpg"
+    image: oneillImg
   },
 
   //Preforming Arts Center - sette = theater 
@@ -278,7 +305,7 @@ export const resources = [
     keywords: ["performing arts", "theater", "concerts", "dance", "classrooms", "practice rooms"],
     category: "Arts",
     building: "Sette LaVerghetta Center for Performing Arts",
-    image: "/src/assets/marywood-sette-laverghetta-performing-arts-center.jpg"
+    image: setteLaVerghettaImg
   },
   {
     id: 22,
@@ -287,7 +314,7 @@ export const resources = [
     keywords: ["theater", "concert hall", "university events"],
     category: "Arts",
     building: "Sette LaVerghetta Center for Performing Arts",
-    image: "/src/assets/theater.jpg"
+    image: theaterImg
   },
   //Center of Natural and Health Sciences
   {
@@ -298,7 +325,7 @@ export const resources = [
     keywords: ["natural sciences", "health sciences", "laboratories", "computer labs", "classrooms","science", "cnhs", "biology", "chemistry", "labs"],
     category: "Academics",
     building: "Center of Natural and Health Sciences",
-    image: "/src/assets/marywood-science-center.jpg"
+    image: scienceCenterImg
   },
 
   //IHM
@@ -310,7 +337,7 @@ export const resources = [
     keywords: ["IHM", "sisters", "chapel", "offices", "meeting spaces"],
     category: "Support",
     building: "IHM Center",
-    image: "/src/assets/marywood-ihm-center.jpg"
+    image: ihmCenterImg
   }
 
 ];
