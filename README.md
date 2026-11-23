@@ -27,8 +27,8 @@ A interactive web application that is designed to help Marywood University stude
 ```text
 marywood-campus-navigator/
 ├── public/                  # Static assets & building imagery
-├── src/
 │   ├── assets/              # Campus photos & map icons
+├── src/
 │   ├── components/          # React components (Map, Assistant)
 │   ├── data/                # Structured datasets (buildings.js, categories.js, contactInfo.js, resources.js)
 │   ├── styles/              # Modular stylesheets (assistant.css, contact.css, home.css, resources.css, etc.)
