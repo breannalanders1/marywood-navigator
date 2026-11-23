@@ -56,11 +56,11 @@ export const buildings = [
     {
         id: 7,
         name: "Campus Safety",
-        synonyms: ["Safety", "Security"],
+        synonyms: ["Safety", "Security", "Emergency", "Emergency Services"],
         lat: 41.434926,
         lng: -75.631242,
         resources: [17],
-        category: "safety"
+        category: "support"
     },
     {
         id: 8,
