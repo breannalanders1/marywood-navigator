@@ -71,8 +71,8 @@ function App() {
           </p>
 
           <div className="home-images">
-            <img src="/src/assets/marywood1.jpg" />
-            <img src="/src/assets/marywood3.jpg" />
+            <img src="/assets/marywood1.jpg" />
+            <img src="/assets/marywood3.jpg" />
           </div>
 
           <div className="features-grid">
